@@ -1,5 +1,6 @@
 using api.Data;
 using Microsoft.EntityFrameworkCore;
+using api.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,5 +19,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.MapPost("/codingsessions", async (CodingSession session, ApplicationDbContext db) =>
+{
+    db.CodingSessions.Add(session);
+    await db.SaveChangesAsync();
+    return Results.Created($"/codingsessions/{session.Id}", session);
+});
 
 app.Run();
