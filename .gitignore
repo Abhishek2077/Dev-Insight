@@ -1,0 +1,34 @@
+# Standard .NET Core gitignore file
+
+## Build results
+[Bb]in/
+[Oo]bj/
+
+## User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+## Rider/ReSharper specific files
+.idea/
+*.suo
+
+## Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+## VS Installer
+.vs/
+
+## Sensitive files - VERY IMPORTANT!
+appsettings.Development.json
+secrets.json
+
+## node.js developer files
+client/node_modules/
+client/dist/
+client/.env.local
+client/.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
